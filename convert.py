@@ -7,13 +7,18 @@ def convert():
     parser  = argparse.ArgumentParser()
     parser.add_argument("image_path", help="Path of the images")
     parser.add_argument("--output_file", help="Name of the output file. If not provided, assumed to be traininfile.txt")
+    parser.add_argument("--append", help="true if you want to append the results to the output file. Assumed false")
     args = parser.parse_args()
   
     outputFile = "trainingfile.txt"
     if args.output_file:
       outputFile = args.output_file 
-    
-    handle = open(outputFile,"w+")
+   
+    mode = "w+"
+    if args.append and args.append == "true":
+       mode = "a+"
+        
+    handle = open(outputFile,mode)
 
    
     for filename in glob.iglob('*.xml'):
