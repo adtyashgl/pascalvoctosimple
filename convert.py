@@ -27,7 +27,7 @@ def convert():
       print filename 
       root = xml.etree.ElementTree.parse(filename).getroot()
       if args.image_path:
-         image_path = args.image_path + '/' + filename 
+         image_path = args.image_path + '/' + root.find('filename').text + '.png'
       else:
          image_path = root.find('path').text
 
