@@ -10,9 +10,13 @@ However, if you would like to conver the pascal voc data annotations to the "sim
 
 Usage
 convert.py xml_path 
+
 Arguments accepted 
+
 xml_path : path where the annotation files are present (xml)
+
 --image_path: Path of the images. If this is provided,path within the label will be changed to the provided option. 
+
 --output_file: Name of the output file. If not provided, assumed to be traininfile.txt
 
 
